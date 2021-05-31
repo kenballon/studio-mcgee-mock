@@ -1,5 +1,5 @@
 <template lang="">
-    <section class="container xl mx-auto mt-4" >
+    <div class="container xl mx-auto mt-4" >
         <div class="demo">
             <button @click="testShow = !testShow">Show Hero Text</button>
         </div>
@@ -9,7 +9,7 @@
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam dolorem sint sit veritatis placeat ad blanditiis et, explicabo aut sed? A, ipsam quis.</p>
             </div>
        </transition>
-    </section>
+    </div>
 </template>
 <script>
 export default {

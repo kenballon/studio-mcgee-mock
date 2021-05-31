@@ -3,7 +3,7 @@
     <nav class="container xl mx-auto">
       <div class="nav-wrapper flex items-center py-4 justify-between">
         <div class="branding">
-          <router-link :to="{name:'Home'}">
+          <router-link :to="{ name: 'Home' }">
             <img src="../assets/userProfile/logo.svg" alt />
           </router-link>
         </div>
@@ -21,14 +21,21 @@
           <div class="login-reg ml-7">
             <img src="../assets/userProfile/user.svg" width="24" alt />
           </div>
-          <div class="mobile-menu ml-7" @click="toggleMobileNavi" v-show="isMobile">
+          <div
+            class="mobile-menu ml-7"
+            @click="toggleMobileNavi"
+            v-show="isMobile"
+          >
             <img src="../assets/userProfile/menu.svg" width="24" alt />
           </div>
         </div>
       </div>
     </nav>
     <transition name="mobile-nav-trans">
-      <div class="mobile-nav flex flex-col justify-between" v-show="isMobileNav">
+      <div
+        class="mobile-nav flex flex-col justify-between"
+        v-show="isMobileNav"
+      >
         <div class="mobile-nav-links_wrapper">
           <header class="mob-close flex justify-end p-4">
             <img
@@ -46,7 +53,9 @@
               <router-link class="nav-links_text" to="#">Design</router-link>
             </li>
             <li>
-              <router-link class="nav-links_text" to="#">The Studio</router-link>
+              <router-link class="nav-links_text" to="#"
+                >The Studio</router-link
+              >
             </li>
             <li>
               <router-link class="nav-links_text" to="#">Shop</router-link>
@@ -65,15 +74,39 @@
                   <li>
                     <label for="newletter-input"></label>
                     <div>
-                      <input type="email" name="newletter-input" placeholder="john-doe@example.com" />
+                      <input type="email" name="newletter-input" />
                     </div>
                   </li>
                 </ul>
               </div>
               <div class="mform-footer">
-                <input type="submit" value="Submit" class="newsletter-submit">
+                <input type="submit" value="Submit" class="newsletter-submit" />
               </div>
             </form>
+            <div class="socmed-wrapper">
+              <ul class="flex items-center gap-x-5">
+                <li>
+                  <router-link to="#">
+                    <img src="@/assets/soc-med/insta.svg" alt="" />
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="#">
+                    <img src="@/assets/soc-med/pinterest.svg" alt="" />
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="#">
+                    <img src="@/assets/soc-med/facebook.svg" alt="" />
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="#">
+                    <img src="@/assets/soc-med/youtube.svg" alt="" />
+                  </router-link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -89,7 +122,7 @@ export default {
     return {
       isMobile: null,
       isMobileNav: null,
-      windowWidth: null
+      windowWidth: null,
     };
   },
   created() {
@@ -112,8 +145,7 @@ export default {
     toggleMobileNavi() {
       this.isMobileNav = !this.isMobileNav;
     },
-   
-  }
+  },
 };
 </script>
 
@@ -122,8 +154,8 @@ header {
   border-bottom: 1px solid #96969680;
   .container {
     .nav-wrapper {
-      @media screen and (min-width: 300px) {
-        padding-inline: 16px;
+      @media screen and (min-width: 300px) and (max-width: 500px) {
+        padding-inline: 25px;
       }
       .branding {
         h1 {
@@ -138,6 +170,10 @@ header {
           font-family: "DM Serif Display";
           font-size: 15px;
           padding: 20px;
+          transition: all 0.5s ease;
+          &:hover {
+            color: rgb(253, 143, 0);
+          }
         }
       }
 
@@ -149,7 +185,7 @@ header {
             &:hover {
               cursor: pointer;
             }
-            @media screen and (min-width: 300px) {
+            @media screen and (min-width: 300px) and (max-width: 500px) {
               width: 20px;
             }
           }
@@ -184,7 +220,16 @@ header {
         }
       }
     }
-
+    .newsletter-form-wrapper{
+      .socmed-wrapper{
+        padding-block:15px;
+        background-color: #626050;
+        display: grid;
+        place-items: center; 
+        margin-top:20px;
+        border-radius: 3px;        
+      }
+    }
     .mobile-menu-newsletter {
       padding: 25px;
       h3 {
@@ -197,9 +242,9 @@ header {
           li {
             div {
               input {
-                width:100%;
+                width: 100%;
                 background-color: transparent;
-                border-bottom: 1px solid #96969680;                
+                border-bottom: 1px solid #96969680;
                 padding-top: 15px;
                 padding-bottom: 5px;
                 font-weight: 300;
@@ -208,21 +253,20 @@ header {
           }
         }
       }
-      .mform-footer{
-        .newsletter-submit{
+      .mform-footer {
+        .newsletter-submit {
           background-color: transparent;
           text-transform: uppercase;
-          font-size: 10px;
+          font-size: 12px;
+          letter-spacing: 1px;
         }
       }
     }
   }
 
   .mobile-nav-trans-enter-active {
-    transition: all 1s ease-in-out;
-    // transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+    transition: all 0.5s ease-in-out;
   }
-
 
   .mobile-nav-trans-leave-active {
     transition: all 1s ease-out;
