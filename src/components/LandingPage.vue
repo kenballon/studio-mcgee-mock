@@ -1,7 +1,7 @@
 <template>
  <main>
    <section>
-     <Hero></Hero>
+     <Hero />
    </section>
  </main>
 </template>

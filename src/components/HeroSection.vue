@@ -12,8 +12,10 @@
           <div class="sm-headline caps">
             <span class="categ">Design Tips</span>
           </div>
-          <h2>Choosing Your Upholstery Furniture Fabric</h2>
-          <p>Some of our go-to material choices</p>
+          <h2 class="hero-blog-title">
+            Choosing Your Upholstery Furniture Fabric
+          </h2>
+          <p class="hero-blog-short-desc">Some of our go-to material choices</p>
         </div>
       </div>
     </div>
@@ -56,18 +58,19 @@ export default {
     .blog-hero-title {
       background-color: #f8f7f3;
       max-height: 515px;
+      padding-block: 135px;
+      padding-inline: 15px;
+      @media screen and(min-width: 300px) and (max-width: 700px) {
+        padding-block: 50px;
+        padding-inline: 25px;
+      }
       .blog-hero-title_wrapper {
         width: 430px;
         max-width: 100%;
         margin-inline: auto;
-        padding-block: 135px;
-        padding-inline: 15px;
         display: flex;
         flex-direction: column;
-        @media screen and(min-width: 300px) and (max-width: 700px) {
-          padding-block: 50px;
-          padding-inline: 25px;
-        }
+
         .sm-headline.caps {
           .categ {
             padding: 8px 15px;
@@ -79,6 +82,9 @@ export default {
             opacity: 0.8;
           }
         }
+        // .hero-blog-short-desc {
+
+        // }
         h2 {
           font-size: 48px;
           font-family: "DM Serif Display";
