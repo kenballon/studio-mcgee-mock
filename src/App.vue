@@ -26,7 +26,7 @@ export default {
     display: flex;
     flex-direction: column;
     footer{
-      margin-top:auto;
+      margin-top:auto;      
     }
   }
 

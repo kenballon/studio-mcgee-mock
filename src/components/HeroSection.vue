@@ -3,19 +3,22 @@
     <div class="hero-section_inner-wrapper">
       <div class="hero-img-wrapper ">
         <img
-          src="../assets/imgs-blog/Studio_McGee_Beck_Pines_hero.jpg"
+          :src="require(`../assets/imgs-blog/${post.blogCoverPhoto}.jpg`)"
           alt=""
         />
       </div>
       <div class="blog-hero-title ">
         <div class="blog-hero-title_wrapper">
           <div class="sm-headline caps">
-            <span class="categ">Design Tips</span>
+            <span class="categ">{{post.blogCategory}}</span>
           </div>
           <h2 class="hero-blog-title">
-            Choosing Your Upholstery Furniture Fabric
+            {{post.blogTitle}}
           </h2>
-          <p class="hero-blog-short-desc">Some of our go-to material choices</p>
+          <div class="hero-blog-short-desc flex items-center gap-4">
+            <div>{{post.blogShortDesc}}</div>
+            <router-link to="#"><img src="../assets/icons/icon-arrow.svg" width="24" alt=""></router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -23,15 +26,11 @@
 </template>
 <script>
 export default {
-  name: "Hero",
-  data() {
-    return {
-      testShow: true,
-      heroBGImg: "@/assets/imgs-blog/Studio_McGee_Beck_Pines_hero.jpg",
-    };
-  },
+  name: "Hero",  
+  props:['post']
 };
 </script>
+
 <style lang="scss" scoped>
 .hero-section {
   .hero-section_inner-wrapper {
@@ -45,10 +44,11 @@ export default {
 
     .hero-img-wrapper {
       max-height: 515px;
-      @media screen and(min-width: 300px) and (max-width: 700px) {
+      @media screen and(min-width: 300px) and (max-width: 480px) {
         max-height: 215px;
       }
       img {
+        width:100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
@@ -60,7 +60,7 @@ export default {
       max-height: 515px;
       padding-block: 135px;
       padding-inline: 15px;
-      @media screen and(min-width: 300px) and (max-width: 700px) {
+      @media screen and(min-width: 300px) and (max-width: 480px) {
         padding-block: 50px;
         padding-inline: 25px;
       }
@@ -81,13 +81,11 @@ export default {
             font-weight: 500;
             opacity: 0.8;
           }
-        }
-        // .hero-blog-short-desc {
-
-        // }
-        h2 {
+        }      
+        .hero-blog-title {
           font-size: 48px;
           font-family: "DM Serif Display";
+          line-height: 1.2em;
           @media screen and(min-width: 300px) and (max-width: 700px) {
             font-size: 38px;
           }

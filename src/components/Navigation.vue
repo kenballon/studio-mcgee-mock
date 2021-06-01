@@ -202,6 +202,7 @@ header {
     top: 0;
     position: fixed;
     background-color: #f8f7f3;
+    z-index: 10;
     div > header {
       background-color: #f3f2eb;
     }
