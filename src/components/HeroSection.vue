@@ -1,48 +1,77 @@
 <template lang="">
-    <div class="container xl mx-auto mt-4" >
-        <div class="demo">
-            <button @click="testShow = !testShow">Show Hero Text</button>
+  <div class="hero-section">
+    <div class="hero-section_inner-wrapper flex flex-wrap">
+      <div class="hero-img-wrapper ">
+        <img
+          src="../assets/imgs-blog/Studio_McGee_Beck_Pines_hero.jpg"
+          alt=""
+        />
+      </div>
+      <div class="blog-hero-title ">
+        <div class="blog-hero-title_wrapper">
+          <div class="sm-headline caps">
+            Design Tips
+          </div>
+          <h2>Choosing Your Upholstery Furniture Fabric</h2>
+          <p>Some of our go-to material choices</p>
         </div>
-       <transition name="show-hero">
-            <div v-show="testShow">
-                <h1>Hero Section</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam dolorem sint sit veritatis placeat ad blanditiis et, explicabo aut sed? A, ipsam quis.</p>
-            </div>
-       </transition>
+      </div>
     </div>
+  </div>
 </template>
 <script>
 export default {
   name: "Hero",
   data() {
     return {
-      testShow: true
+      testShow: true,
     };
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>
-button{
-    background-color: beige;
-    padding:15px;
-}
-.container {
-  h1 {
-    font-size: 72px;
-    font-family: "DM Serif Display";
+.hero-section {
+  max-height: 515px;
+  .hero-section_inner-wrapper {
+    width: 100%;
+    height: 100%;
+
+    .hero-img-wrapper,
+    .blog-hero-title {
+      width: 50%;
+    }
+
+    .hero-img-wrapper {
+      max-height: 515px;
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .blog-hero-title {
+      background-color: #f8f7f3;
+       max-height: 515px;
+      .blog-hero-title_wrapper {
+        width: 430px;
+        max-width: 100%;
+        margin-inline: auto;
+        padding-block: 135px;
+        padding-inline: 15px;
+        display: flex;
+        flex-direction: column;
+        .sm-headline.caps {
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          font-size: 14px;
+        }
+        h2 {
+          font-size: 48px;
+          font-family: "DM Serif Display";
+        }
+      }
+    }
   }
-}
-
-.show-hero-enter-active{
-    transition: all 0.3s ease-out;
-}
-
-.show-hero-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.show-hero-enter-from,.show-hero-leave-to {
-  transform: translateX(-20px);
-  opacity: 0;
 }
 </style>
