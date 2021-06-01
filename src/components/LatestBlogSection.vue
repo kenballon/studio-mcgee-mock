@@ -7,7 +7,7 @@
             <div class="card-article pr-5 pl-5">
                 <div class="article-featured-img">
                     <router-link to="#">
-                        <img src="../assets/imgs-blog/CATALOUGE-672x450.png" alt="">
+                        <img src="../assets/imgs-blog/CATALOUGE-672x450.jpg" alt="">
                     </router-link>
                 </div>
                 <div class="article-title">
@@ -73,6 +73,11 @@ export default {
         &:not(:first-child) {
           margin-top: 70px;
         }
+      }
+      .article-featured-img{
+         &:hover{
+            opacity: 0.6;
+          }
       }
       .article-title {
         .sm-headline {
