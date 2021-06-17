@@ -221,14 +221,14 @@ header {
         }
       }
     }
-    .newsletter-form-wrapper{
-      .socmed-wrapper{
-        padding-block:15px;
+    .newsletter-form-wrapper {
+      .socmed-wrapper {
+        padding-block: 15px;
         background-color: #626050;
         display: grid;
-        place-items: center; 
-        margin-top:20px;
-        border-radius: 3px;        
+        place-items: center;
+        margin-top: 20px;
+        border-radius: 3px;
       }
     }
     .mobile-menu-newsletter {
